@@ -9,7 +9,7 @@ int main()
 	printf("\n\nSort a word array in ascending order :\n");
 	printf("--------------------------------------------\n");
 	printf("Input the word : ");
-	fgets(str, sizeof str, stdin);
+	scanf("%s", str);
 	l = strlen(str);
 	for (j = 0;j < l;j++)
 	{
@@ -18,7 +18,8 @@ int main()
 			str[j] = tolower(str[j]);
 		}
 	}
-	for (i = 1;i < l+1;i++) {
+	/* sorting process */
+	for (i = 1;i < l;i++) {
 		for (j = 0;j < l - i;j++) {
 			if (str[j] > str[j + 1])
 			{
