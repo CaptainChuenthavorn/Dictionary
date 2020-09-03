@@ -1,26 +1,31 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
-int main() {
-	char input[6][5],temp;
-	for (int i = 0;i < 6;i++) {
-		for (int j = 0;j < 4;j++) {
-			scanf("%c",&input[i][j]);
+#include <string.h>
+#include <ctype.h>
+int main()
+{
+	char str[100], temp;
+	int i, j, l;
+	printf("\n\nSort a word array in ascending order :\n");
+	printf("--------------------------------------------\n");
+	printf("Input the word : ");
+	scanf("%s", str);
+	l = strlen(str);
+	for (j = 0;j < l;j++)
+	{
+		if (str[j] > 64 && str[j] < 91) {
+			str[j] = tolower(str[j]);
 		}
-	}
-	for (int i = 0;i < 5;i++) {
-		for (int j = 0;j < 4;j++) {
-			if (input[i][j] > input[i + 1][j]) {
-				temp = input[i][j];
-				input[i][j] = input[i + 1][j];
-				input[i + 1][j] = temp;
+}
+	for (i = 1;i < l;i++){
+		for (j = 0;j < l - i;j++){
+			if (str[j] > str[j + 1])
+			{
+				temp = str[j];
+				str[j] = str[j + 1];
+				str[j + 1] = temp;
 			}
-		}
-	}
-	for (int i = 0;i < 6;i++) {
-		for (int j = 0;j < 4;j++) {
-			printf("%c", input[i][j]);
-		}
-	}
+	printf("\n\nThe Result after sorting is : ");
+	printf("%s\n", str);
 	return 0;
 }
