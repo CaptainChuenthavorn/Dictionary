@@ -13,19 +13,22 @@ int main()
 	l = strlen(str);
 	for (j = 0;j < l;j++)
 	{
-		if (str[j] > 64 && str[j] < 91) {
+		if (str[j] > 64 && str[j] < 91)
+		{
 			str[j] = tolower(str[j]);
 		}
-}
-	for (i = 1;i < l;i++){
-		for (j = 0;j < l - i;j++){
+	}
+	for (i = 1;i < l;i++) {
+		for (j = 0;j < l - i;j++) {
 			if (str[j] > str[j + 1])
 			{
 				temp = str[j];
 				str[j] = str[j + 1];
 				str[j + 1] = temp;
 			}
-	printf("\n\nThe Result after sorting is : ");
-	printf("%s\n", str);
-	return 0;
+			printf("\n\nThe Result after sorting is : ");
+			printf("%s\n", str);
+			return 0;
+		}
+	}
 }
