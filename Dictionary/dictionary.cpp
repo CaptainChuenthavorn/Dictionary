@@ -10,7 +10,6 @@ int main()
 	printf("--------------------------------------------\n");
 	printf("Input the word : ");
 	scanf("%[^\n]s", str);
-	printf("string : %s", str);
 	l = strlen(str);
 	for (j = 0;j < l;j++)
 	{
